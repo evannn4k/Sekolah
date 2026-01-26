@@ -46,7 +46,7 @@
                                 @forelse ($galeris as $galeri)
                                 <tr class="align-middle">
                                     <td>{{ $no++ }}</td>
-                                    <td><img src="{{ asset("storage/images/galeri/".$galeri->gambar) }}" alt="" height="120px"></td>
+                                    <td><img src="{{ asset("storage/images/galeri/".$galeri->gambar) }}" alt="" style="max-height: 120px;"></td>
                                     <td>{{ $galeri->judul }}</td>
                                     <td>{{ $galeri->deskripsi }}</td>
                                     <td>{{ $galeri->kategori }}</td>
@@ -70,6 +70,9 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        <div class="p-3">
+                            {{ $galeris->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-@extends('layout.admin-layout')
+@extends('layout.guru-layout')
 
 @section('main')
     <div class="app-content-header">
@@ -13,7 +13,7 @@
 
     <div class="app-content">
         <div class="container-fluid">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-lg-4 col-6">
                     <div class="small-box text-bg-primary">
                         <div class="inner">
@@ -106,7 +106,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

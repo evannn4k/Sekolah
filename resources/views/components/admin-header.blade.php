@@ -11,13 +11,13 @@
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     <img src="{{ asset('storage/images/user/' . Auth::guard("admin")->user()->gambar) }}" class="user-image rounded-circle shadow"
-                        alt="User Image" />
+                        alt="" />
                     <span class="d-none d-md-inline">{{ Auth::guard('admin')->user()->username }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <li class="user-header text-bg-secondary">
                         <img src="{{ asset('storage/images/user/' . Auth::guard("admin")->user()->gambar) }}" class="user-image rounded-circle shadow"
-                            alt="User Image" />
+                            alt="" />
                         <p>
                             {{ Auth::guard('admin')->user()->username }}
                             <small>{{ Auth::guard('admin')->user()->email }}</small>

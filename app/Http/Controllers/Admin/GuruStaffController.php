@@ -15,7 +15,7 @@ class GuruStaffController extends Controller
 {
     public function index()
     {
-        $guruStaffs = GuruStaff::all();
+        $guruStaffs = GuruStaff::orderByDesc("created_at")->paginate(10);
         return view("admin.guru-staff.index", [
             "guruStaffs" => $guruStaffs    
         ]);

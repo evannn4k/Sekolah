@@ -47,7 +47,7 @@
                                     @forelse ($banners as $banner)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td><img src="{{ asset("storage/images/banner/$banner->gambar") }}" alt="" height="120px"></td>
+                                        <td><img src="{{ asset("storage/images/banner/$banner->gambar") }}" alt="" style="max-height: 120px;"></td>
                                         <td>{{ $banner->judul }}</td>
                                         <td>{{ $banner->deskripsi }}</td>
                                         <td>{{ $banner->urutan }}</td>
@@ -71,6 +71,9 @@
                                     @endforelse
                                 </tbody>
                             </table>
+                            <div class="p-3">
+                                {{ $banners->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>

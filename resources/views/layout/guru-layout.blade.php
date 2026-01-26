@@ -4,16 +4,16 @@
     <div class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
         <div class="app-wrapper">
 
-            <x-admin-header></x-admin-header>
+            <x-guru-header></x-guru-header>
 
 
-            <x-admin-sidebar></x-admin-sidebar>
+            <x-guru-sidebar></x-guru-sidebar>
 
             <main class="app-main">
                 @yield('main')
             </main>
 
-            <x-admin-footer></x-admin-footer>
+            <x-guru-footer></x-guru-footer>
 
         </div>
     </div>

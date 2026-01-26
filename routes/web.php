@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GuestController;
 
+use App\Http\Controllers\Guru\DashboardController as GuruDashboard;
+use App\Http\Controllers\Guru\BeritaController as GuruBerita;
+use App\Http\Controllers\Guru\GuruStaffController as GuruGuruStaff;
+
 use App\Http\Controllers\Admin\UserController as AdminUser;
 use App\Http\Controllers\Admin\BeritaController as AdminBerita;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
@@ -26,6 +30,44 @@ Route::controller(AuthController::class)
         Route::get("/login", "login")->name("login")->middleware("guest.role");
         Route::post("/verify", "verify")->name("verify");
         Route::get("/logout", "logout")->name("logout");
+    });
+
+Route::middleware("auth:guru")
+    ->prefix("/guru")
+    ->name("guru.")
+    ->group(function () {
+
+        Route::controller(GuruDashboard::class)
+            ->group(function () {
+                Route::get("/dashboard", "dashboard")->name("dashboard");
+            });
+
+        Route::controller(GuruBerita::class)
+            ->prefix("/berita")
+            ->name("berita.")
+            ->group(function () {
+                Route::get("/", "index")->name("index");
+                Route::get("/create", "create")->name("create");
+                Route::get("/edit/{berita}", "edit")->name("edit");
+                Route::get("/detail/{berita}", "detail")->name("detail");
+
+                Route::post("/store", "store")->name("store");
+                Route::post("/update/{berita}", "update")->name("update");
+                Route::post("/delete/{berita}", "delete")->name("delete");
+            });
+
+        Route::controller(GuruGuruStaff::class)
+            ->prefix("/guru-staff")
+            ->name("guru-staff.")
+            ->group(function () {
+                Route::get("/", "index")->name("index");
+                Route::get("/create", "create")->name("create");
+                Route::get("/edit/{guruStaff}", "edit")->name("edit");
+
+                Route::post("/store", "store")->name("store");
+                Route::post("/update/{guruStaff}", "update")->name("update");
+                Route::post("/delete/{guruStaff}", "delete")->name("delete");
+            });
     });
 
 Route::middleware("auth:admin")
@@ -58,6 +100,7 @@ Route::middleware("auth:admin")
                 Route::get("/", "index")->name("index");
                 Route::get("/create", "create")->name("create");
                 Route::get("/edit/{berita}", "edit")->name("edit");
+                Route::get("/detail/{berita}", "detail")->name("detail");
 
                 Route::post("/store", "store")->name("store");
                 Route::post("/update/{berita}", "update")->name("update");

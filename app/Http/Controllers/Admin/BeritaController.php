@@ -14,11 +14,16 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $beritas = Berita::all();
+        $beritas = Berita::orderByDesc("created_at")->paginate(10);
 
         return view("admin.berita.index", [
             "beritas" => $beritas
         ]);
+    }
+
+    public function detail(Berita $berita)
+    {
+        return view("admin.berita.detail", ["berita" => $berita]);
     }
 
     public function create()

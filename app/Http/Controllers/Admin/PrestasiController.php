@@ -15,7 +15,7 @@ class PrestasiController extends Controller
 {
     public function index()
     {
-        $prestasis = Prestasi::all();
+        $prestasis = Prestasi::orderByDesc("created_at")->paginate(10);
 
         return view("admin.prestasi.index", [
             "prestasis" => $prestasis

@@ -77,7 +77,7 @@
 
     <script src="{{ asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/adminlte.js') }}"></script>
-    <script>
+    {{-- <script>
         const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
         const Default = {
             scrollbarTheme: 'os-theme-light',
@@ -108,7 +108,7 @@
         cardHeaders.forEach((cardHeader) => {
             cardHeader.style.cursor = 'move';
         });
-    </script>
+    </script> --}}
 
 </body>
 

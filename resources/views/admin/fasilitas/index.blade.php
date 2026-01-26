@@ -44,7 +44,7 @@
                                 @forelse ($fasilitases as $fasilitas)
                                 <tr class="align-middle">
                                     <td>{{ $no++ }}</td>
-                                    <td><img src="{{ asset("storage/images/fasilitas/".$fasilitas->gambar) }}" alt="" height="120px"></td>
+                                    <td><img src="{{ asset("storage/images/fasilitas/".$fasilitas->gambar) }}" alt="" style="max-height: 120px;"></td>
                                     <td>{{ $fasilitas->nama_fasilitas }}</td>
                                     <td>{{ $fasilitas->deskripsi }}</td>
                                     <td>{{ $fasilitas->created_at->diffForHumans() }}</td>
@@ -66,6 +66,9 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        <div class="p-3">
+                            {{ $fasilitases->links() }}
+                        </div>
                     </div>
                 </div>
             </div>
