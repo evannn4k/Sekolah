@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Fasilitas;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminFasilitasUpdateRequest extends FormRequest
@@ -11,7 +12,7 @@ class AdminFasilitasUpdateRequest extends FormRequest
      */
     public function true(): bool
     {
-        return false;
+        return (Auth::guard("admin")->check()) ? true : false;
     }
 
     /**

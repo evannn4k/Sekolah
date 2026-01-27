@@ -23,7 +23,10 @@ class AuthController extends Controller
         } else if (Auth::guard("guru")->attempt(["email" => $data["email"], "password" => $data["password"], "role" => "guru"])) {
             $request->session()->regenerate();
             return redirect()->intended("/guru/dashboard");
+        } else {    
+            return redirect()->back()->with("error", "Email atau Password salah");
         }
+
     }
 
     public function logout()

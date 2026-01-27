@@ -29,12 +29,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ProfilSeeder::class,
-            GuruStaffSeeder::class,
-            BeritaSeeder::class,
-            BannerSeeder::class,
-            GaleriSeeder::class,
-            PrestasiSeeder::class,
-            FasilitasSeeder::class,
+            // GuruStaffSeeder::class,
+            // BeritaSeeder::class,
+            // BannerSeeder::class,
+            // GaleriSeeder::class,
+            // PrestasiSeeder::class,
+            // FasilitasSeeder::class,
         ]);
 
     }

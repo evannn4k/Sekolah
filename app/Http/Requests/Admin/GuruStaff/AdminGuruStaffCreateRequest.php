@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\GuruStaff;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminGuruStaffCreateRequest extends FormRequest
@@ -11,7 +12,7 @@ class AdminGuruStaffCreateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return (Auth::guard("admin")->check()) ? true : false;
     }
 
     /**

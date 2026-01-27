@@ -20,9 +20,16 @@ use App\Http\Controllers\Admin\GuruStaffController as AdminGuruStaff;
 use App\Http\Controllers\Admin\FasilitasController as AdminFasilitas;
 
 Route::controller(GuestController::class)
-    ->middleware("guest.role")
     ->group(function () {
         Route::get("/", "index")->name("index");
+        Route::get("/profil", "profil")->name("profil");
+        Route::get("/guru-staff", "guruStaff")->name("guru-staff");
+        Route::get("/berita", "berita")->name("berita");
+        Route::get("/galeri", "galeri")->name("galeri");
+        Route::get("/prestasi", "prestasi")->name("galeri");
+        Route::get("/prestasi", "prestasi")->name("prestasi");
+        Route::get("/fasilitas", "fasilitas")->name("fasilitas");
+        Route::get("/kontak", "kontak")->name("kontak");
     });
 
 Route::controller(AuthController::class)

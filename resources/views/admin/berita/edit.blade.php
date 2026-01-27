@@ -21,7 +21,6 @@
                         </div>
                         <form action="{{ route('admin.berita.update', $berita->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="id" value="{{ $berita->id }}">
                             <div class="card-body">
                                 <div class="row g-3">
 

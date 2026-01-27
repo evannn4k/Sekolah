@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Requests\Admin\GuruStaff;
+namespace App\Http\Requests\Guru\GuruStaff;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminGuruStaffUpdateRequest extends FormRequest
+class GuruGuruStaffUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return (Auth::guard("admin")->check()) ? true : false;
+        return (Auth::guard("guru")->check()) ? true : false;
     }
 
     /**

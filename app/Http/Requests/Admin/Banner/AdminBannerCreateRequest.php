@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Banner;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminBannerCreateRequest extends FormRequest
@@ -11,7 +12,7 @@ class AdminBannerCreateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return (Auth::guard("admin")->check()) ? true : false;
     }
 
     /**

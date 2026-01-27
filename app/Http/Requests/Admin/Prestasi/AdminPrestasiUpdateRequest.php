@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Prestasi;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminPrestasiUpdateRequest extends FormRequest
@@ -11,7 +12,7 @@ class AdminPrestasiUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return (Auth::guard("admin")->check()) ? true : false;
     }
 
     /**

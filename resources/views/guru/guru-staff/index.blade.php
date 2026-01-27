@@ -1,4 +1,4 @@
-@extends("layout.admin-layout")
+@extends("layout.guru-layout")
 
 @section("main")
 <div class="app-content-header">
@@ -20,7 +20,7 @@
                         <h3 class="card-title">Tabel guru dan staff</h3>
                         <div class="card-tools">
                             <div class="me-2">
-                                <a href="{{ route("admin.guru-staff.create") }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tambah</a>
+                                <a href="{{ route("guru.guru-staff.create") }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tambah</a>
                             </div>
                         </div>
                     </div>
@@ -55,8 +55,8 @@
                                     <td>{{ $guruStaff->updated_at->diffForHumans() }}</td>
                                     <td>
                                         <div class="d-flex gap-1">
-                                            <a href="{{ route("admin.guru-staff.edit", $guruStaff->id) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square"></i></a>
-                                            <form action="{{ route("admin.guru-staff.delete", $guruStaff->id) }}" method="POST">
+                                            <a href="{{ route("guru.guru-staff.edit", $guruStaff->id) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square"></i></a>
+                                            <form action="{{ route("guru.guru-staff.delete", $guruStaff->id) }}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                                             </form>

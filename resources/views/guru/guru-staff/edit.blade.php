@@ -1,4 +1,4 @@
-@extends('layout.admin-layout')
+@extends('layout.guru-layout')
 
 @section('main')
 <div class="app-content-header">
@@ -19,7 +19,7 @@
                     <div class="card-header">
                         <div class="card-title">Edit guru atau staff</div>
                     </div>
-                    <form action="{{ route('admin.guru-staff.update', $guruStaff->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('guru.guru-staff.update', $guruStaff->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="row g-3">
@@ -85,7 +85,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="d-flex gap-2">
-                                <a href="{{ route('admin.guru-staff.index') }}" class="btn btn-danger">Kembali</a>
+                                <a href="{{ route('guru.guru-staff.index') }}" class="btn btn-danger">Kembali</a>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>

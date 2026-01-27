@@ -4,7 +4,7 @@
     <div class="app-content-header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-10 offset-md-1">
                     <h3 class="mb-0">Berita</h3>
                 </div>
             </div>
@@ -14,7 +14,7 @@
     <div class="app-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10 offset-md-1">
                     <div class="card mb-4">
                         <div class="card-header">
                             <h3 class="card-title">Tabel berita</h3>
@@ -30,11 +30,11 @@
                                 <div class="row g-4">
                                     <div class="col-md-12 d-flex justify-content-center">
                                         <img src="{{ asset('storage/images/berita/' . $berita->gambar) }}" alt=""
-                                            class="img-fluid">
+                                            class="img-fluid rounded-4">
                                     </div>
-                                    <div class="col-md-6">
-                                        <h3 class="lh-base mb-4">{{ $berita->judul }}</h3>
-                                        <table class="table ">
+                                    <div class="col-md-12">
+                                        <h3 class="lh-base mb-4 fw-bold fs-1">{{ $berita->judul }}</h3>
+                                        <table class="table table-borderless">
                                             <tr>
                                                 <td><i class="fa-solid fa-eye text-info"></i> Views</td>
                                                 <td width="10px">:</td>
@@ -59,10 +59,10 @@
                                     </div>
 
                                     <div class="col-md-12">
-                                        <h4>Isi berita</h4>
-                                        <p class="fs-6">
-                                            {{ $berita->konten }}
-                                        </p>
+                                        <h4 class="mb-4">Isi berita</h4>
+                                        <div class="fs-6">
+                                            {!! nl2br($berita->konten) !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

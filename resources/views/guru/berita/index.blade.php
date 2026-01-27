@@ -1,4 +1,4 @@
-@extends("layout.admin-layout")
+@extends("layout.guru-layout")
 
 @section("main")
 <div class="app-content-header">
@@ -20,7 +20,7 @@
                         <h3 class="card-title">Tabel berita</h3>
                         <div class="card-tools">
                             <div class="me-2">
-                                <a href="{{ route("admin.berita.create") }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tambah</a>
+                                <a href="{{ route("guru.berita.create") }}" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Tambah</a>
                             </div>
                         </div>
                     </div>
@@ -61,9 +61,9 @@
                                     <td>{{ $berita->updated_at->diffForHumans() }}</td>
                                     <td>
                                         <div class="d-flex gap-1">
-                                            <a href="{{ route("admin.berita.detail", $berita) }}" class="btn btn-primary btn-sm">Detail</a>
-                                            <a href="{{ route("admin.berita.edit", $berita) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square"></i></a>
-                                            <form action="{{ route("admin.berita.delete", $berita) }}" method="POST">
+                                            <a href="{{ route("guru.berita.detail", $berita) }}" class="btn btn-primary btn-sm">Detail</a>
+                                            <a href="{{ route("guru.berita.edit", $berita) }}" class="btn btn-success btn-sm"><i class="fa fa-pencil-square"></i></a>
+                                            <form action="{{ route("guru.berita.delete", $berita) }}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                                             </form>

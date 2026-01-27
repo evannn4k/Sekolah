@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Berita;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminBeritaCreateRequest extends FormRequest
@@ -11,7 +12,7 @@ class AdminBeritaCreateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return (Auth::guard("admin")->check()) ? true : false;
     }
 
     /**

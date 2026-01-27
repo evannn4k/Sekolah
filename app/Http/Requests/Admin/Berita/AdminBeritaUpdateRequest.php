@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Berita;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AdminBeritaUpdateRequest extends FormRequest
@@ -11,7 +12,7 @@ class AdminBeritaUpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return (Auth::guard("admin")->check()) ? true : false;
     }
 
     /**
@@ -22,7 +23,6 @@ class AdminBeritaUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "id" => "required",
             "judul" => "required",
             "konten" => "required",
             "gambar" => "image|mimes:jpeg,jpg,png,gif,webp,jfif|max:2048",
