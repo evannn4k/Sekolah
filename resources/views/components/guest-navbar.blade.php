@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route("index") }}">Beranda</a>
+                    <a class="nav-link {{ request()->routeIs("index") ? "active" : "" }}" href="{{ route("index") }}">Beranda</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs("profil") ? "active" : "" }}" href="#" data-bs-toggle="dropdown">
                         Profil
                     </a>
                     <ul class="dropdown-menu">
@@ -30,22 +30,22 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("guru-staff") }}">Guru & Staff</a>
+                    <a class="nav-link {{ request()->routeIs("guru-staff") ? "active" : "" }}" href="{{ route("guru-staff") }}">Guru & Staff</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("berita") }}">Berita</a>
+                    <a class="nav-link {{ (request()->routeIs("berita" ) || request()->routeIs("detail-berita" )) ? "active" : "" }}" href="{{ route("berita") }}">Berita</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("galeri") }}">Galeri</a>
+                    <a class="nav-link {{ request()->routeIs("galeri") ? "active" : "" }}" href="{{ route("galeri") }}">Galeri</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("prestasi") }}">Prestasi</a>
+                    <a class="nav-link {{ request()->routeIs("prestasi") ? "active" : "" }}" href="{{ route("prestasi") }}">Prestasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("fasilitas") }}">Fasilitas</a>
+                    <a class="nav-link {{ request()->routeIs("fasilitas") ? "active" : "" }}" href="{{ route("fasilitas") }}">Fasilitas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route("kontak") }}">Kontak</a>
+                    <a class="nav-link {{ request()->routeIs("kontak") ? "active" : "" }}" href="{{ route("kontak") }}">Kontak</a>
                 </li>
             </ul>
         </div>

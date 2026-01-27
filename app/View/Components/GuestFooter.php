@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class admin-header extends Component
+class GuestFooter extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class admin-header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.admin-header');
+        return view('components.guest-footer');
     }
 }

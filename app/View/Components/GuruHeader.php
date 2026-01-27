@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class guest-navbar extends Component
+class GuruHeader extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class guest-navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.guest-navbar');
+        return view('components.guru-header');
     }
 }

@@ -25,6 +25,7 @@ Route::controller(GuestController::class)
         Route::get("/profil", "profil")->name("profil");
         Route::get("/guru-staff", "guruStaff")->name("guru-staff");
         Route::get("/berita", "berita")->name("berita");
+        Route::get("/detail-berita/{berita}", "detailBerita")->name("detail-berita");
         Route::get("/galeri", "galeri")->name("galeri");
         Route::get("/prestasi", "prestasi")->name("galeri");
         Route::get("/prestasi", "prestasi")->name("prestasi");

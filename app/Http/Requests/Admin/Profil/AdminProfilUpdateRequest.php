@@ -33,6 +33,7 @@ class AdminProfilUpdateRequest extends FormRequest
             "visi" => "required",
             "misi" => "required",
             "sambutan_kepsek" => "required",
+            "nama_kepsek" => "required",
             "foto_kepsek" => "image|mimes:jpg,jepg,png,jfif,webp|max:2048",
         ];
     }

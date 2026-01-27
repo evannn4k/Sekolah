@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text("visi");
             $table->text("misi");
             $table->text("sambutan_kepsek");
+            $table->string("nama_kepsek");
             $table->string("foto_kepsek");
             $table->timestamps();
         });

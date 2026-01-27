@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class guru-footer extends Component
+class AdminFooter extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class guru-footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.guru-footer');
+        return view('components.admin-footer');
     }
 }
