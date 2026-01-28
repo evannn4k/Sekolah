@@ -26,132 +26,45 @@
 
             <!-- Gallery Grid -->
             <div class="row g-4">
-                <!-- Gallery Item 1 -->
-                <div class="col-lg-4 col-md-6 gallery-filter pembelajaran" data-aos="zoom-in">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400&h=300&fit=crop"
-                            alt="Pembelajaran">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Kegiatan Belajar Mengajar</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Pembelajaran
+                @foreach ($galeris as $galeri)
+                    <div class="col-lg-4 col-md-6 gallery-filter pembelajaran" data-aos="zoom-in">
+                        <div class="gallery-item">
+                            <img src="{{ asset("storage/images/galeri/$galeri->gambar") }}" alt="Pembelajaran">
+                            <div class="gallery-overlay">
+                                <div class="gallery-title">{{ $galeri->judul }}</div>
+                                <div class="gallery-category">
+                                    <i class="fas fa-folder me-2"></i>{{ $galeri->kategori }}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <!-- Gallery Item 2 -->
-                <div class="col-lg-4 col-md-6 gallery-filter ekstrakurikuler" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop"
-                            alt="Ekstrakurikuler">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Ekstrakurikuler Pramuka</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Ekstrakurikuler
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="col-lg-4 col-md-6 gallery-filter acara" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop"
-                            alt="Acara">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Perayaan Hari Besar Islam</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Acara Sekolah
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 4 -->
-                <div class="col-lg-4 col-md-6 gallery-filter prestasi" data-aos="zoom-in">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop"
-                            alt="Prestasi">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Pemenang Olimpiade</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Prestasi
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 5 -->
-                <div class="col-lg-4 col-md-6 gallery-filter pembelajaran" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop"
-                            alt="Pembelajaran">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Praktikum Sains</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Pembelajaran
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 6 -->
-                <div class="col-lg-4 col-md-6 gallery-filter fasilitas" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=300&fit=crop"
-                            alt="Fasilitas">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Gedung Sekolah</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Fasilitas
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 7 -->
-                <div class="col-lg-4 col-md-6 gallery-filter ekstrakurikuler" data-aos="zoom-in">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&h=300&fit=crop"
-                            alt="Olahraga">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Ekstrakurikuler Olahraga</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Ekstrakurikuler
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 8 -->
-                <div class="col-lg-4 col-md-6 gallery-filter acara" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop"
-                            alt="Acara">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Field Trip Museum</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Acara Sekolah
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 9 -->
-                <div class="col-lg-4 col-md-6 gallery-filter fasilitas" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop"
-                            alt="Perpustakaan">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Perpustakaan Sekolah</div>
-                            <div class="gallery-category">
-                                <i class="fas fa-folder me-2"></i>Fasilitas
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+
+            <nav class="mt-5" data-aos="fade-up">
+                <ul class="pagination justify-content-center">
+
+                    <li class="page-item {{ $galeris->onFirstPage() ? 'disabled' : '' }}">
+                        <a class="page-link" href="{{ $galeris->previousPageUrl() }}">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </li>
+
+                    @for ($i = 1; $i <= $galeris->lastPage(); $i++)
+                        <li class="page-item {{ $galeris->currentPage() == $i ? 'active' : '' }}">
+                            <a class="page-link" href="{{ $galeris->url($i) }}">{{ $i }}</a>
+                        </li>
+                    @endfor
+
+                    <li class="page-item {{ $galeris->hasMorePages() ? '' : 'disabled' }}">
+                        <a class="page-link" href="{{ $galeris->nextPageUrl() }}">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
         </div>
     </section>
 

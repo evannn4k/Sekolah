@@ -22,8 +22,10 @@
                         <span class="input-group-text bg-white">
                             <i class="fas fa-search text-success"></i>
                         </span>
-                        <input type="text" class="form-control border-start-0" id="searchInput"
+                        <form action="{{ route("berita.search") }}" method="post">
+                            <input type="text" name="keyword" class="form-control border-start-0" id="searchInput"
                             placeholder="Cari berita...">
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-3">

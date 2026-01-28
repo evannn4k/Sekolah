@@ -27,7 +27,7 @@
                         </div>
                         <div class="card-body p-0">
                             <table class="table">
-                                <thead>
+                                <thead class="table-success">
                                     <tr>
                                         <th>#</th>
                                         <th>Gambar</th>

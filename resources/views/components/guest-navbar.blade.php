@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-modern sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{{ route("index") }}">
             <div class="brand-logo">
                 <i class="fas fa-graduation-cap"></i>
             </div>

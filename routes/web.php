@@ -31,6 +31,8 @@ Route::controller(GuestController::class)
         Route::get("/prestasi", "prestasi")->name("prestasi");
         Route::get("/fasilitas", "fasilitas")->name("fasilitas");
         Route::get("/kontak", "kontak")->name("kontak");
+
+        Route::get("/berita/search", "beritaSearch")->name("berita.search");
     });
 
 Route::controller(AuthController::class)

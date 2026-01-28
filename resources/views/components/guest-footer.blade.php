@@ -23,21 +23,21 @@
             <div class="col-lg-2 col-md-6">
                 <h5 class="footer-title">Menu Cepat</h5>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
-                    <li><a href="profil.html"><i class="fas fa-chevron-right"></i> Profil</a></li>
-                    <li><a href="berita.html"><i class="fas fa-chevron-right"></i> Berita</a></li>
-                    <li><a href="galeri.html"><i class="fas fa-chevron-right"></i> Galeri</a></li>
-                    <li><a href="prestasi.html"><i class="fas fa-chevron-right"></i> Prestasi</a></li>
-                    <li><a href="kontak.html"><i class="fas fa-chevron-right"></i> Kontak</a></li>
+                    <li><a href="{{ route("index") }}"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="{{ route("profil") }}"><i class="fas fa-chevron-right"></i> Profil</a></li>
+                    <li><a href="{{ route("berita") }}"><i class="fas fa-chevron-right"></i> Berita</a></li>
+                    <li><a href="{{ route("galeri") }}"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                    <li><a href="{{ route("prestasi") }}"><i class="fas fa-chevron-right"></i> Prestasi</a></li>
+                    <li><a href="{{ route("kontak") }}"><i class="fas fa-chevron-right"></i> Kontak</a></li>
                 </ul>
             </div>
             
             <div class="col-lg-3 col-md-6">
                 <h5 class="footer-title">Informasi</h5>
                 <ul class="footer-links">
-                    <li><a href="profil.html"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
-                    <li><a href="guru-staff.html"><i class="fas fa-chevron-right"></i> Guru & Staff</a></li>
-                    <li><a href="fasilitas.html"><i class="fas fa-chevron-right"></i> Fasilitas</a></li>
+                    <li><a href="{{ route("profil") }}"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
+                    <li><a href="{{ route("guru-staff") }}"><i class="fas fa-chevron-right"></i> Guru & Staff</a></li>
+                    <li><a href="{{ route("fasilitas") }}"><i class="fas fa-chevron-right"></i> Fasilitas</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> PPDB</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Kalender Akademik</a></li>
                 </ul>
