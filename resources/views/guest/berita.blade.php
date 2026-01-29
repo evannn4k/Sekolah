@@ -69,7 +69,6 @@
                         <div class="news-card">
                             <div class="news-image">
                                 <img src="{{ asset("storage/images/berita/$berita->gambar") }}" alt="News">
-                                <div class="news-badge">{{ $berita->tags }}</div>
                             </div>
                             <div class="p-4">
                                 <div class="d-flex gap-3 mb-3 text-muted small">

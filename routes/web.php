@@ -20,6 +20,16 @@ use App\Http\Controllers\Admin\GuruStaffController as AdminGuruStaff;
 use App\Http\Controllers\Admin\FasilitasController as AdminFasilitas;
 use App\Http\Controllers\Admin\PesanController as AdminPesan;
 
+Route::controller(AuthController::class)
+    ->group(function () {
+        Route::get("/login", "login")->name("login")->middleware("guest.role");
+        Route::get("/formRegister", "formRegister")->name("formRegister")->middleware("guest.role");
+
+        Route::post("/register", "register")->name("register");
+        Route::post("/verify", "verify")->name("verify");
+        Route::get("/logout", "logout")->name("logout");
+    });
+
 Route::controller(GuestController::class)
     ->group(function () {
         Route::get("/", "index")->name("index");
@@ -36,13 +46,6 @@ Route::controller(GuestController::class)
         Route::get("/berita/search", "beritaSearch")->name("berita.search");
         Route::get("/berita/{k}", "beritaKategori")->name("berita.kategori");
         Route::post("/pesan", "pesan")->name("pesan");
-    });
-
-Route::controller(AuthController::class)
-    ->group(function () {
-        Route::get("/login", "login")->name("login")->middleware("guest.role");
-        Route::post("/verify", "verify")->name("verify");
-        Route::get("/logout", "logout")->name("logout");
     });
 
 Route::middleware("auth:guru")

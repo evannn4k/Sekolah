@@ -130,7 +130,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
-                        <div class="stat-number">{{ $totalPrestasi ?? "" }}+</div>
+                        <div class="stat-number">{{ $totalPrestasi ?? "tes" }}+</div>
                         <div class="stat-label">Prestasi</div>
                     </div>
                 </div>
@@ -163,12 +163,9 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="section-subtitle">TENTANG KAMI</div>
-                    <h2 class="section-title mb-4">Pendidikan Islami Berkualitas Sejak 1975</h2>
+                    <h2 class="section-title mb-4">{{ $profil->judul_tentang_sekolah }}</h2>
                     <p class="text-muted mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                        MI Muhammadiyah Gempolsewu telah berdiri sejak tahun 1975 dengan komitmen memberikan
-                        pendidikan Islam yang berkualitas. Kami memadukan kurikulum nasional dengan nilai-nilai
-                        Islami untuk membentuk generasi yang tidak hanya cerdas secara intelektual, tetapi juga
-                        memiliki akhlak mulia.
+                        {!! Str::limit(nl2br($profil->tentang_sekolah), 260) !!}
                     </p>
                     <ul class="check-list mb-4">
                         <li>
@@ -192,7 +189,7 @@
                             <span>Prestasi siswa tingkat kabupaten hingga nasional</span>
                         </li>
                     </ul>
-                    <a href="{{ route('profil') }}" class="btn btn-modern btn-primary-modern">
+                    <a href="{{ route('profil') }}#tentang-sekolah" class="btn btn-modern btn-primary-modern">
                         Selengkapnya
                         <i class="fas fa-arrow-right"></i>
                     </a>

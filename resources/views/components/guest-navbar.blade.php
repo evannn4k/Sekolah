@@ -9,11 +9,11 @@
                 <div style="font-size: 12px; color: #6b7280; font-weight: 500;">Gempolsewu</div>
             </div>
         </a>
-        
+
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <i class="fas fa-bars"></i>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
@@ -49,6 +49,10 @@
                     <a class="nav-link {{ request()->routeIs("kontak") ? "active" : "" }}" href="{{ route("kontak") }}">Kontak</a>
                 </li>
             </ul>
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <a href="{{ route("login") }}" class="btn btn-outline-success rounded-pill">Login</a>
+                <a href="{{ route("formRegister") }}" class="btn btn-success rounded-pill">Register</a>
+            </div>
         </div>
     </div>
 </nav>

@@ -52,13 +52,7 @@
                     <div class="section-subtitle mb-3">TENTANG KAMI</div>
                     <h2 class="section-title mb-4">{{ $profil->nama_sekolah }}</h2>
                     <p class="text-muted mb-4" style="line-height: 1.8; font-size: 1.05rem;">
-                        MI Muhammadiyah Gempolsewu merupakan lembaga pendidikan tingkat dasar yang berada di bawah
-                        naungan Pimpinan Cabang Muhammadiyah (PCM) setempat. Sekolah ini telah berdiri sejak tahun 1975
-                        dan terus berkembang hingga saat ini dengan tetap memegang teguh nilai-nilai Islami.
-                    </p>
-                    <p class="text-muted" style="line-height: 1.8; font-size: 1.05rem;">
-                        Dengan motto "Beriman, Berilmu, Beramal", kami berkomitmen untuk membentuk generasi yang tidak
-                        hanya cerdas secara intelektual, tetapi juga memiliki akhlak mulia dan jiwa yang religius.
+                        {!! nl2br($profil->tentang_sekolah) !!}
                     </p>
                 </div>
             </div>

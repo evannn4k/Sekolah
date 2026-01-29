@@ -73,10 +73,10 @@
                                         <label for="role" class="form-label">Role</label>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic radio toggle button group">
-                                            <input type="radio" class="btn-check" name="role" id="admin" value="admin" checked>
+                                            <input type="radio" class="btn-check" name="role" id="admin" value="admin" {{ ($user->role == "admin") ? "checked" : "" }}>
                                             <label class="btn btn-outline-primary" for="admin">Admin</label>
 
-                                            <input type="radio" class="btn-check" name="role" id="guru" value="guru">
+                                            <input type="radio" class="btn-check" name="role" id="guru" value="guru" {{ ($user->role == "guru") ? "checked" : "" }}>
                                             <label class="btn btn-outline-primary" for="guru">Guru</label>
                                         </div>
                                     </div>

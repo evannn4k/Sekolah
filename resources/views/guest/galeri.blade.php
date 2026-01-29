@@ -27,7 +27,7 @@
             <!-- Gallery Grid -->
             <div class="row g-4">
                 @foreach ($galeris as $galeri)
-                    <div class="col-lg-4 col-md-6 gallery-filter pembelajaran" data-aos="zoom-in">
+                    <div class="col-lg-4 col-md-6 gallery-filter pembelajaran" data-filter="{{ $galeri->kategori }}" data-aos="zoom-in">
                         <div class="gallery-item">
                             <img src="{{ asset("storage/images/galeri/$galeri->gambar") }}" alt="Pembelajaran">
                             <div class="gallery-overlay">

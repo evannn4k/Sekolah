@@ -10,13 +10,25 @@
         <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <img src="{{ asset('storage/images/user/' . Auth::guard("admin")->user()->gambar) }}" class="user-image rounded-circle shadow"
+                    <img src="
+                    @if(Auth::guard("admin")->user()->gambar)
+                    {{ asset('storage/images/user/' . Auth::guard("admin")->user()->gambar) }}
+                    @else
+                    {{ asset('assets/img/default-pp.jpg') }}
+                    @endif
+                    " class="user-image rounded-circle shadow"
                         alt="" />
                     <span class="d-none d-md-inline">{{ Auth::guard('admin')->user()->username }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <li class="user-header text-bg-secondary">
-                        <img src="{{ asset('storage/images/user/' . Auth::guard("admin")->user()->gambar) }}" class="user-image rounded-circle shadow"
+                        <img src="
+                        @if(Auth::guard("admin")->user()->gambar)
+                    {{ asset('storage/images/user/' . Auth::guard("admin")->user()->gambar) }}
+                    @else
+                    {{ asset('assets/img/default-pp.jpg') }}
+                    @endif
+                        " class="user-image rounded-circle shadow"
                             alt="" />
                         <p>
                             {{ Auth::guard('admin')->user()->username }}

@@ -25,15 +25,11 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" />
                         </div>
-                        {{-- <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div> --}}
                     </div>
                     <div class="card-footer">
                         <div class="d-flex flex-column gap-2">
                             <button type="submit" class="w-100 btn btn-primary">Submit</button>
-                            <div class="text-center">Belum memiliki akun? silahkan <a href="">daftar</a></div>
+                            <div class="text-center">Belum memiliki akun? silahkan <a href="{{ route("formRegister") }}">daftar</a></div>
                         </div>
                     </div>
                 </form>

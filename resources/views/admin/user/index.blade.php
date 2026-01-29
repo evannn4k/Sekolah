@@ -46,7 +46,7 @@
                                 @forelse ($users as $user)
                                 <tr class="align-middle">
                                     <td>{{ $no++ }}</td>
-                                    <td><img src="{{ asset("storage/images/user/".$user->gambar) }}" alt="" style="max-height: 40px;"></td>
+                                    <td><img src="{{ ($user->gambar) ? asset("storage/images/user/".$user->gambar) : asset("assets/img/default-pp.jpg") }}" alt="" style="max-height: 40px;"></td>
                                     <td>{{ $user->username }}</td>
                                     <td>{{ $user->nama_lengkap }}</td>
                                     <td>{{ $user->email }}</td>

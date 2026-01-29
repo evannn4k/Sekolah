@@ -9,9 +9,6 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10" data-aos="fade-up">
-                <span class="article-category">
-                    <i class="fas fa-folder me-2"></i> {{ $berita->tags }}
-                </span>
                 <h1 class="article-title">
                     {{ $berita->judul }}
                 </h1>
@@ -183,11 +180,7 @@
                     <!-- Tags -->
                     <div class="tags-section">
                         <strong>Tags:</strong>
-                        <a href="#" class="tag">#HariSantri</a>
-                        <a href="#" class="tag">#Kegiatan</a>
-                        <a href="#" class="tag">#Lomba</a>
-                        <a href="#" class="tag">#Islam</a>
-                        <a href="#" class="tag">#Pendidikan</a>
+                        <a href="#" class="tag">#{{ $berita->tags }}</a>
                     </div>
                 </div>
 

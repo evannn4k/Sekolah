@@ -147,7 +147,6 @@
                                         <label for="tentang_sekolah" class="form-label">Tentang Sekolah</label>
                                         <textarea name="tentang_sekolah" id="tentang_sekolah" rows="6" class="form-control @error('tentang_sekolah') is-invalid @enderror"
                                             style="resize: none">{{ $profil->tentang_sekolah ?? '' }}</textarea>
-                                        <div class="form-text">Diberi enter untuk setiap tentang_sekolah</div>
                                         @error('tentang_sekolah')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -157,7 +156,7 @@
 
                                     <div class="col-md-12">
                                         <label for="sambutan_kepsek" class="form-label">Sambutan Kepala Sekolah</label>
-                                        <textarea name="sambutan_kepsek" id="sambutan_kepsek" rows="6"
+                                        <textarea name="sambutan_kepsek" id="sambutan_kepsek" rows="12"
                                             class="form-control @error('sambutan_kepsek') is-invalid @enderror" style="resize: none">{{ $profil->sambutan_kepsek ?? '' }}</textarea>
                                         @error('sambutan_kepsek')
                                             <div class="invalid-feedback">
