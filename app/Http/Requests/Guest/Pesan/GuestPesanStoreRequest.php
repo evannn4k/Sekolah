@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests\Guest\Berita;
+namespace App\Http\Requests\Guest\Pesan;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GuestBeritaSearchRequest extends FormRequest
+class GuestPesanStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class GuestBeritaSearchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "nama_lengkap" => "required",
+            "email" => "required|email",
+            "telepon" => "",
+            "subject" => "required",
+            "pesan" => "required",
         ];
     }
 }

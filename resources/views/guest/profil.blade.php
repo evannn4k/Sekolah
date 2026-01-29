@@ -19,7 +19,7 @@
 
     <section class="py-5 bg-light" id="sambutan">
         <div class="container">
-            <div data-aos="fade-right">  
+            <div data-aos="fade-right">
                 <div class="section-subtitle mb-3">SAMBUTAN</div>
                 <h2 class="section-title">KEPALA SEKOLAH {{ $profil->nama_sekolah }}</h2>
             </div>
@@ -32,7 +32,8 @@
                 </div>
                 <div class="col-md-5" data-aos="fade-left">
                     <div class="py-4">
-                        <img src="{{ asset("storage/images/profil/$profil->foto_kepsek") }}" alt="" class="w-100 img-fluid rounded-4 shadow-lg">
+                        <img src="{{ asset("storage/images/profil/$profil->foto_kepsek") }}" alt=""
+                            class="w-100 img-fluid rounded-4 shadow-lg">
                     </div>
                 </div>
             </div>
@@ -40,7 +41,7 @@
     </section>
 
     <!-- Tentang Section -->
-    <section class="py-5" id="tantang">
+    <section class="py-5" id="tentang-sekolah">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
@@ -115,58 +116,8 @@
 
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="timeline">
-                        <div class="timeline-item" data-aos="fade-left">
-                            <div class="timeline-dot"></div>
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="badge bg-success mb-3">1975</div>
-                                    <h5 class="mb-3" style="color: #16a34a;">Berdirinya MI Muhammadiyah Gempolsewu</h5>
-                                    <p class="text-muted mb-0">
-                                        MI Muhammadiyah Gempolsewu didirikan dengan 3 ruang kelas dan 45 siswa pertama.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
-                            <div class="timeline-dot"></div>
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="badge bg-success mb-3">1990</div>
-                                    <h5 class="mb-3" style="color: #16a34a;">Pembangunan Gedung Baru</h5>
-                                    <p class="text-muted mb-0">
-                                        Pembangunan gedung baru dengan 6 ruang kelas. Jumlah siswa meningkat menjadi 150.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
-                            <div class="timeline-dot"></div>
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="badge bg-success mb-3">2010</div>
-                                    <h5 class="mb-3" style="color: #16a34a;">Meraih Akreditasi A</h5>
-                                    <p class="text-muted mb-0">
-                                        Berhasil meraih akreditasi A dari BAN-S/M sebagai bukti kualitas pendidikan.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
-                            <div class="timeline-dot"></div>
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <div class="badge bg-success mb-3">2025</div>
-                                    <h5 class="mb-3" style="color: #16a34a;">Era Digital</h5>
-                                    <p class="text-muted mb-0">
-                                        Transformasi digital dengan 450+ siswa dan 25+ tenaga pendidik profesional.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="lh-lg py-4 text-center" data-aos="fade-up">
+                        {!! nl2br($profil->sejarah) !!}
                     </div>
                 </div>
             </div>

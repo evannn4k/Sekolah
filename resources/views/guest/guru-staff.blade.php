@@ -18,7 +18,7 @@
             <!-- staff Grid -->
             <div class="row g-4">
 
-                @foreach ($guruStaffs as $guruStaff)
+                @forelse ($guruStaffs as $guruStaff)
                     <div class="col-lg-3 col-md-6 staff-item" data-aos="fade-up">
                         <div class="staff-card">
                             <div class="staff-image">
@@ -33,7 +33,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="text-center py-5" data-aos="fade-up">Guru dan Staff belum ditambahkan</div>
+                @endforelse
 
             </div>
 
@@ -81,7 +83,7 @@
             const search = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('.staff-item');
 
-            items.forEach(item => {
+            items.forelse(item => {
                 const itemKategori = item.getAttribute('data-kategori');
                 const itemTitle = item.querySelector('h5').textContent.toLowerCase();
 

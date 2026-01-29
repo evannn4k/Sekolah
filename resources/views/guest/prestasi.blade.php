@@ -8,7 +8,7 @@
     <div class="page-header text-center">
         <div class="container">
             <h1 class="page-title" data-aos="fade-down">Prestasi</h1>
-            <p class="text-white-50 lead" data-aos="fade-up">Seluruh penghargaan yang dimiliki 
+            <p class="text-white-50 lead" data-aos="fade-up">Seluruh penghargaan yang dimiliki
                 {{ $profil->nama_sekolah }}</p>
         </div>
     </div>
@@ -19,7 +19,7 @@
             <!-- staff Grid -->
             <div class="row g-4">
 
-                @foreach ($prestasis as $prestasi)
+                @forelse ($prestasis as $prestasi)
                     <div class="col-md-10 offset-md-1 border-bottom pb-4" data-aos="fade-up">
                         <div class="row g-4">
                             <div class="col-md-4 d-flex">
@@ -54,7 +54,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="text-center py-5" data-aos="fade-up">Prestasi belum ditambahkan</div>
+                @endforelse
 
             </div>
 
@@ -102,7 +104,7 @@
             const search = document.getElementById('searchInput').value.toLowerCase();
             const items = document.querySelectorAll('.staff-item');
 
-            items.forEach(item => {
+            items.forelse(item => {
                 const itemKategori = item.getAttribute('data-kategori');
                 const itemTitle = item.querySelector('h5').textContent.toLowerCase();
 

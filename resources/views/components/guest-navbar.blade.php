@@ -24,7 +24,8 @@
                         Profil
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route("profil") }}">Tentang Sekolah</a></li>
+                        <li><a class="dropdown-item" href="{{ route("profil") }}">Sambutan Kepala Sekolah</a></li>
+                        <li><a class="dropdown-item" href="{{ route("profil") }}#tentang-sekolah">Tentang Sekolah</a></li>
                         <li><a class="dropdown-item" href="{{ route("profil") }}#visi-misi">Visi & Misi</a></li>
                         <li><a class="dropdown-item" href="{{ route("profil") }}#sejarah">Sejarah</a></li>
                     </ul>

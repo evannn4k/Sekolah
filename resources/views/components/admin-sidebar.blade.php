@@ -39,30 +39,37 @@
                      <a href="{{ route('admin.berita.index') }}" class="nav-link {{ request()->routeIs('admin.berita.index') ? 'active' : '' }}">
                          <i class="nav-icon fa-solid fa-newspaper"></i>
                          <p>Berita</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="{{ route('admin.banner.index') }}" class="nav-link {{ request()->routeIs('admin.banner.index') ? 'active' : '' }}">
-                         <i class="nav-icon fa-solid fa-flag"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.banner.index') }}" class="nav-link {{ request()->routeIs('admin.banner.index') ? 'active' : '' }}">
+                            <i class="nav-icon fa-solid fa-flag"></i>
                          <p>Banner Web</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="{{ route('admin.galeri.index') }}" class="nav-link {{ request()->routeIs('admin.galeri.index') ? 'active' : '' }}">
-                         <i class="nav-icon fa-solid fa-images"></i>
-                         <p>Galeri</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="{{ route('admin.prestasi.index') }}" class="nav-link {{ request()->routeIs('admin.prestasi.index') ? 'active' : '' }}">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.galeri.index') }}" class="nav-link {{ request()->routeIs('admin.galeri.index') ? 'active' : '' }}">
+                            <i class="nav-icon fa-solid fa-images"></i>
+                            <p>Galeri</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.prestasi.index') }}" class="nav-link {{ request()->routeIs('admin.prestasi.index') ? 'active' : '' }}">
                          <i class="nav-icon fa-solid fa-trophy"></i>
                          <p>Prestasi</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="{{ route('admin.fasilitas.index') }}" class="nav-link {{ request()->routeIs('admin.fasilitas.index') ? 'active' : '' }}">
-                         <i class="nav-icon fa-solid fa-screwdriver-wrench"></i>
-                         <p>Fasilitas</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.fasilitas.index') }}" class="nav-link {{ request()->routeIs('admin.fasilitas.index') ? 'active' : '' }}">
+                            <i class="nav-icon fa-solid fa-screwdriver-wrench"></i>
+                            <p>Fasilitas</p>
+                        </a>
+                    </li>
+                    <li class="nav-header fs-6">Kontak</li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.pesan.index') }}" class="nav-link {{ request()->routeIs('admin.pesan.index') ? 'active' : '' }}">
+                         <i class="nav-icon fa-solid fa-envelope"></i>
+                         <p>Pesan</p>
                      </a>
                  </li>
              </ul>

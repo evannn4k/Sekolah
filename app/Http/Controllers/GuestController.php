@@ -2,23 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pesan;
+use App\Models\Banner;
 use App\Models\Berita;
 use App\Models\Galeri;
 use App\Models\Profil;
 use App\Models\Prestasi;
 use App\Models\Fasilitas;
 use App\Models\GuruStaff;
+use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\Request;
+use App\Http\Requests\Guest\Pesan\GuestPesanStoreRequest;
+use App\Http\Requests\Guest\Berita\GuestBeritaSearchRequest;
+use Pest\Preset;
 
 class GuestController extends Controller
 {
     public function index()
     {
+        $profil = Profil::first();
+        $totalPrestasi = Prestasi::count();
+        $totalGuru = GuruStaff::count();
         $beritas = Berita::latest()->take(3)->get();
         $galeris = Galeri::latest()->take(3)->get();
+        $banners = Banner::where("status", "aktif")->orderBy("urutan")->get();
 
         return view("guest.index", [
+            "profil" => $profil,
+            "totalPrestasi" => $totalPrestasi,
+            "totalGuru" => $totalGuru,
             "beritas" => $beritas,
             "galeris" => $galeris,
+            "banners" => $banners
         ]);
     }
 
@@ -45,33 +60,46 @@ class GuestController extends Controller
 
     public function berita()
     {
-        $beritas = Berita::latest()->paginate(6);
+        $beritas = Berita::latest()->paginate(9);
 
         return view("guest.berita", [
             "beritas" => $beritas
         ]);
     }
-
+    
     public function detailBerita(Berita $berita)
     {
         $views = $berita->views + 1;
-
+        
         $data = [
             "views" => $views
         ];
-
+        
         $berita->update($data);
         $beritaPopulers = Berita::orderByDesc("views")->take(4)->get();
-
+        
         return view("guest.detail-berita", [
             "berita" => $berita,
             "beritaPopulers" => $beritaPopulers,
         ]);
     }
-
-    public function beritaSearch()
+    
+    public function beritaSearch(Request $request)
     {
-        
+        $beritas = Berita::where("judul", "LIKE" ,"%". $request->get('s') ."%")->latest()->paginate(9);
+    
+        return view("guest.berita", [
+            "beritas" => $beritas
+        ]);
+    }
+    
+    public function beritaKategori(Request $request)
+    {
+        $beritas = Berita::where("tags", $request->get('k') )->latest()->paginate(9);
+    
+        return view("guest.berita", [
+            "beritas" => $beritas
+        ]);
     }
 
     public function galeri()
@@ -112,5 +140,14 @@ class GuestController extends Controller
         return view("guest.kontak", [
             "profil" => $profil
         ]);
+    }
+
+    public function pesan(GuestPesanStoreRequest $request)
+    {
+        $data = $request->validated();
+
+        Pesan::create($data);
+
+        return redirect()->route("kontak")->with("success", "Berhasil mengirim pesan!!");
     }
 }

@@ -23,18 +23,20 @@ class AdminProfilUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "nama_sekolah" => "required",
-            "alamat" => "required",
-            "telepon" => "required",
-            "email" => "required|email",
-            "npsn" => "required",
-            "akreditasi" => "required",
-            "sejarah" => "required",
-            "visi" => "required",
-            "misi" => "required",
-            "sambutan_kepsek" => "required",
-            "nama_kepsek" => "required",
+            "nama_sekolah" => "",
+            "alamat" => "",
+            "telepon" => "",
+            "email" => "email",
+            "npsn" => "",
+            "akreditasi" => "",
+            "sejarah" => "",
+            "visi" => "",
+            "misi" => "",
+            "sambutan_kepsek" => "",
+            "nama_kepsek" => "",
             "foto_kepsek" => "image|mimes:jpg,jepg,png,jfif,webp|max:2048",
+            "nama_tentang_sekolah" => "",
+            "tentang_sekolah" => "",
         ];
     }
 }

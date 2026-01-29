@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\GaleriController as AdminGaleri;
 use App\Http\Controllers\Admin\PrestasiController as AdminPrestasi;
 use App\Http\Controllers\Admin\GuruStaffController as AdminGuruStaff;
 use App\Http\Controllers\Admin\FasilitasController as AdminFasilitas;
+use App\Http\Controllers\Admin\PesanController as AdminPesan;
 
 Route::controller(GuestController::class)
     ->group(function () {
@@ -33,6 +34,8 @@ Route::controller(GuestController::class)
         Route::get("/kontak", "kontak")->name("kontak");
 
         Route::get("/berita/search", "beritaSearch")->name("berita.search");
+        Route::get("/berita/{k}", "beritaKategori")->name("berita.kategori");
+        Route::post("/pesan", "pesan")->name("pesan");
     });
 
 Route::controller(AuthController::class)
@@ -188,5 +191,12 @@ Route::middleware("auth:admin")
                 Route::post("/store", "store")->name("store");
                 Route::post("/update/{guruStaff}", "update")->name("update");
                 Route::post("/delete/{guruStaff}", "delete")->name("delete");
+            });
+
+        Route::controller(AdminPesan::class)
+            ->prefix("/pesan")
+            ->name("pesan.")
+            ->group(function () {
+                Route::get("/", "index")->name("index");
             });
     });

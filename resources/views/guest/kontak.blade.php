@@ -70,34 +70,60 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="contact-card">
                         <h3 class="fw-bold mb-4">Kirim Pesan</h3>
-                        <form id="contactForm">
+                        <form action="{{ route("pesan") }}" method="POST">
+                            @csrf
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">Nama Lengkap *</label>
-                                    <input type="text" class="form-control" id="nama" required>
+                                    <label for="nama_lengkap" class="form-label fw-semibold">Nama Lengkap *</label>
+                                    <input type="text" class="form-control @error("nama_lengkap") is-invalid @enderror" id="nama_lengkap" name="nama_lengkap">
+                                    @error("nama_lengkap")
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">Email *</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <label for="email" class="form-label fw-semibold">Email *</label>
+                                    <input type="email" class="form-control @error("email") is-invalid @enderror" id="email" name="email">
+                                    @error("email")
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">Telepon</label>
-                                    <input type="tel" class="form-control" id="telepon">
+                                    <label for="telepon" class="form-label fw-semibold">Telepon</label>
+                                    <input type="number" class="form-control @error("telepon") is-invalid @enderror" id="telepon" name="telepon">
+                                    @error("telepon")
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label fw-semibold">Subjek *</label>
-                                    <select class="form-select" id="subjek" required>
+                                    <label for="subject" class="form-label fw-semibold">Subjek *</label>
+                                    <select class="form-select @error("subject") is-invalid @enderror" id="subjek" name="subject">
                                         <option value="">Pilih Subjek</option>
-                                        <option>Pendaftaran Siswa Baru</option>
-                                        <option>Informasi Umum</option>
-                                        <option>Keluhan/Saran</option>
-                                        <option>Kerjasama</option>
-                                        <option>Lainnya</option>
+                                        <option value="Pendaftaran Siswa Baru">Pendaftaran Siswa Baru</option> 
+                                        <option value="Informasi Umum">Informasi Umum</option>
+                                        <option value="Keluhan/Saran">Keluhan/Saran</option>
+                                        <option value="Kerjasama">Kerjasama</option>
+                                        <option value="Lainnya">Lainnya</option>
                                     </select>
+                                    @error("subject")
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
-                                    <label class="form-label fw-semibold">Pesan *</label>
-                                    <textarea class="form-control" id="pesan" rows="5" required></textarea>
+                                    <label for="pesan" class="form-label fw-semibold">Pesan *</label>
+                                    <textarea class="form-control @error("pesan") is-invalid @enderror" id="pesan" rows="5" name="pesan"></textarea>
+                                    @error("pesan")
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-submit">
@@ -109,7 +135,7 @@
                         </form>
                     </div>
                 </div>
-
+                
                 <!-- Map & Social Media -->
                 <div class="col-lg-6" data-aos="fade-left">
                     <!-- Map -->
@@ -151,7 +177,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="py-5">
+    {{-- <section class="py-5">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <div class="text-success fw-semibold text-uppercase mb-2" style="letter-spacing: 2px; font-size: 14px;">
@@ -224,7 +250,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
 
 @push('script')
