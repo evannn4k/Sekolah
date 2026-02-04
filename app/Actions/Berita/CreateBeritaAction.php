@@ -16,7 +16,15 @@ class CreateBeritaAction
         $file->storeAs($path, $filename);
 
         $data["gambar"] = $filename;
-        $data["slug"] = Str::slug($data["judul"]);
+        $slug = Str::slug($data["judul"]);
+        $counter = 1;
+
+        while(Berita::where("slug", $slug)->exists()) {
+            $slug = $slug ."-". $counter;
+            $counter++;
+        }
+
+        $data["slug"] = $slug;
 
         $berita = Berita::create($data);
 

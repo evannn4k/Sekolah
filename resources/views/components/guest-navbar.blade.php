@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-modern sticky-top">
     <div class="container">
         <a class="navbar-brand" href="{{ route("index") }}">
-            <div class="brand-logo">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
+            <img src="{{ asset("storage/images/profil/$profil->logo") }}" alt="" class="img-fluid brand-logo">
             <div>
-                <div style="font-size: 18px;">MI Muhammadiyah</div>
-                <div style="font-size: 12px; color: #6b7280; font-weight: 500;">Gempolsewu</div>
+                <div style="font-size: 18px;">{{ Str::words($profil->nama_sekolah, 2, '') }}</div>
+                <div style="font-size: 12px; color: #6b7280; font-weight: 500;">{{ str($profil->nama_sekolah)->explode(' ')->last() }}</div>
             </div>
         </a>
 

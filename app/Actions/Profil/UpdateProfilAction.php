@@ -8,19 +8,29 @@ use Illuminate\Support\Facades\Storage;
 
 class UpdateProfilAction
 {
-    public function execute($profil, $data, $file)
+    public function execute($profil, $data, $foto_kepsek, $logo)
     {
         $path = "images/profil/";
         $data["updated_at"] = now();
 
-        if ($file) {
-            $filename = time() . "-" . $file->getClientOriginalName();
+        if ($foto_kepsek) {
+            $filename = time() . "-" . $foto_kepsek->getClientOriginalName();
 
             Storage::delete($path . $profil->foto_kepsek);
-            $file->storeAs($path, $filename);
+            $foto_kepsek->storeAs($path, $filename);
 
             $data["foto_kepsek"] = $filename;
         }
+
+        if ($logo) {
+            $filename = time() . "-" . $logo->getClientOriginalName();
+
+            Storage::delete($path . $profil->logo);
+            $logo->storeAs($path, $filename);
+
+            $data["logo"] = $filename;
+        }
+
         $profil->update($data);
 
         return $profil;

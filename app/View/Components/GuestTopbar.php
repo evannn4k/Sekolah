@@ -3,8 +3,9 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\Models\Profil;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class GuestTopbar extends Component
 {
@@ -21,6 +22,9 @@ class GuestTopbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.guest-topbar');
+        $profil = Profil::first();
+        return view('components.guest-topbar', [
+            "profil" => $profil
+        ]);
     }
 }

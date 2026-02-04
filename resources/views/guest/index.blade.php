@@ -165,7 +165,7 @@
                     <div class="section-subtitle">TENTANG KAMI</div>
                     <h2 class="section-title mb-4">{{ $profil->judul_tentang_sekolah }}</h2>
                     <p class="text-muted mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                        {!! Str::limit(nl2br($profil->tentang_sekolah), 260) !!}
+                        {!! Str::words($profil->tentang_sekolah, 36) !!}
                     </p>
                     <ul class="check-list mb-4">
                         <li>
@@ -224,12 +224,12 @@
                                     <span><i class="far fa-eye"></i> {{ $berita->views ?? 0 }}</span>
                                 </div>
                                 <h3 class="news-title">
-                                    <a href="{{ route('detail-berita', $berita) }}">{{ $berita->judul }}</a>
+                                    <a href="{{ route('detail-berita', $berita->slug) }}">{{ $berita->judul }}</a>
                                 </h3>
                                 <p class="news-excerpt">
                                     {{ Str::limit($berita->konten, 150) }}
                                 </p>
-                                <a href="{{ route('detail-berita', $berita) }}" class="read-more">
+                                <a href="{{ route('detail-berita', $berita->slug) }}" class="read-more">
                                     Baca Selengkapnya
                                     <i class="fas fa-arrow-right"></i>
                                 </a>

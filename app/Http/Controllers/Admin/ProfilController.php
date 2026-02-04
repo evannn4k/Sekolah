@@ -21,8 +21,8 @@ class ProfilController extends Controller
 
     public function update(Profil $profil, AdminProfilUpdateRequest $request, UpdateProfilAction $action)
     {
-        $action->execute($profil, $request->validated(), $request->file("foto_kepsek"));
-        
+        $action->execute($profil, $request->validated(), $request->file("foto_kepsek"), $request->file("logo"));
+
         return redirect()->route("admin.profil.index")->with("success", "Berhasil mengedit profil!!");
     }
 }

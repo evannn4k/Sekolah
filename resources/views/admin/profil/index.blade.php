@@ -86,6 +86,17 @@
                                     </div>
 
                                     <div class="col-md-12">
+                                        <label for="jam_kerja" class="form-label">Jam Kerja</label>
+                                        <input type="text" class="form-control @error('jam_kerja') is-invalid @enderror"
+                                            id="jam_kerja" name="jam_kerja" value="{{ $profil->jam_kerja ?? '' }}" />
+                                        @error('jam_kerja')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-md-12">
                                         <label for="akreditasi" class="form-label">Akreditasi</label>
                                         <input type="text" class="form-control @error('akreditasi') is-invalid @enderror"
                                             id="akreditasi" name="akreditasi" value="{{ $profil->akreditasi ?? '' }}" />
@@ -192,6 +203,7 @@
                                             </div>
                                         @enderror
                                     </div>
+                                    
                                     <div class="col-md-12">
                                         <label class="form-label">Foto Kepala Sekolah Saat ini</label>
                                         <div>
@@ -199,6 +211,32 @@
                                                 $foto_kepsek = $profil->foto_kepsek ?? '';
                                             @endphp
                                             <img src="{{ asset('storage/images/profil/' . $foto_kepsek) }}"
+                                                alt="" style="max-height:200px">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="logo" class="form-label">Ganti logo</label>
+                                        <div class="input-group">
+                                            <input type="file"
+                                                class="form-control @error('logo') is-invalid @enderror"
+                                                name="logo" id="logo" />
+                                            <label class="input-group-text" for="logo">Upload</label>
+                                        </div>
+                                        @error('logo')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label class="form-label">Logo Sekolah Saat ini</label>
+                                        <div>
+                                            @php
+                                                $logo = $profil->logo ?? '';
+                                            @endphp
+                                            <img src="{{ asset('storage/images/profil/' . $logo) }}"
                                                 alt="" style="max-height:200px">
                                         </div>
                                     </div>

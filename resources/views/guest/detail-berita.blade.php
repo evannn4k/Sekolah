@@ -198,32 +198,23 @@
                 <div class="related-news" data-aos="fade-up">
                     <h3 class="fw-bold mb-4">Berita Terkait</h3>
                     <div class="row g-4">
+                        
+                        @foreach ($beritas as $beritaTerkait)
                         <div class="col-md-6">
-                            <a href="detail-berita.html" class="related-card">
-                                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=400&h=200&fit=crop" alt="Related">
+                            <a href="{{ route("detail-berita", $beritaTerkait->slug) }}" class="related-card">
+                                <img src="{{ asset("storage/images/berita/$beritaTerkait->gambar") }}" alt="Related">
                                 <div class="related-card-body">
                                     <h5 class="related-card-title">
-                                        Juara 1 Olimpiade Matematika Tingkat Kecamatan
+                                        {{ $beritaTerkait->judul }}
                                     </h5>
                                     <div class="related-card-meta">
-                                        <i class="far fa-calendar me-2"></i>10 Jan 2025
+                                        <i class="far fa-calendar me-2"></i>{{ $beritaTerkait->tanggal_publish }}
                                     </div>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-6">
-                            <a href="detail-berita.html" class="related-card">
-                                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=200&fit=crop" alt="Related">
-                                <div class="related-card-body">
-                                    <h5 class="related-card-title">
-                                        Pendaftaran Siswa Baru Tahun Ajaran 2025/2026
-                                    </h5>
-                                    <div class="related-card-meta">
-                                        <i class="far fa-calendar me-2"></i>5 Jan 2025
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
+                        
                     </div>
                 </div>
 
@@ -306,7 +297,7 @@
                     <h4 class="sidebar-title">Berita Popular</h4>
 
                     @foreach ($beritaPopulers as $beritaPopuler)
-                    <a href="{{ route("detail-berita", $beritaPopuler) }}" class="popular-item">
+                    <a href="{{ route("detail-berita", $beritaPopuler->slug) }}" class="popular-item">
                         <img src="{{ asset("storage/images/berita/$beritaPopuler->gambar") }}" alt="Popular">
                         <div>
                             <div class="popular-item-title">

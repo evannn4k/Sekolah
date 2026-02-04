@@ -37,6 +37,8 @@ class AdminProfilUpdateRequest extends FormRequest
             "foto_kepsek" => "image|mimes:jpg,jepg,png,jfif,webp|max:2048",
             "nama_tentang_sekolah" => "",
             "tentang_sekolah" => "",
+            "logo" => "image|mimes:jpg,jepg,png,jfif,webp|max:2048",
+            "jam_kerja" => "",
         ];
     }
 }

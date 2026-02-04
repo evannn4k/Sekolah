@@ -11,7 +11,16 @@ class UpdateBeritaAction
 {
     public function execute($berita, $data, $file)
     {
-        $data["slug"] = Str::slug($data["judul"]);
+        $slug = Str::slug($data["judul"]);
+        $counter = 1;
+
+        while (Berita::where("slug", $slug)->where("id", "!=", $berita->id)->exists()) {
+            $slug = $slug . "-" . $counter;
+            $counter++;
+        }
+
+        $data["slug"] = $slug;
+        
         $data["updated_at"] = now();
 
         if ($file) {

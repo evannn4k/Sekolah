@@ -31,7 +31,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="d-flex gap-3">
+                    <!-- <div class="d-flex gap-3">
                         <div class="dropdown">
                             <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -41,7 +41,7 @@
                                 <li><a class="dropdown-item" href="{{ route("berita.kategori", "Kegiatan") }}">Kegiatan</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     {{-- <div class="col-lg-3">
                         <select class="form-select" id="filterKategori">
                             <option value="">Semua Kategori</option>
@@ -80,7 +80,7 @@
                                         class="text-decoration-none text-dark">{{ $berita->judul }}</a>
                                 </h5>
                                 <p class="text-muted mb-3">{{ Str::limit($berita->konten, 150) }}</p>
-                                <a href="{{ route('detail-berita', $berita) }}"
+                                <a href="{{ route('detail-berita', $berita->slug) }}"
                                     class="text-success fw-semibold text-decoration-none">
                                     Baca Selengkapnya <i class="fas fa-arrow-right"></i>
                                 </a>

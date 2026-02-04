@@ -67,18 +67,22 @@ class GuestController extends Controller
         ]);
     }
     
-    public function detailBerita(Berita $berita)
+    public function detailBerita($slug)
     {
+        $berita = Berita::where("slug", $slug)->first();
+
         $views = $berita->views + 1;
         
         $data = [
             "views" => $views
         ];
         
+        $beritas = Berita::orderBy("views")->limit(2)->get();
         $berita->update($data);
         $beritaPopulers = Berita::orderByDesc("views")->take(4)->get();
         
         return view("guest.detail-berita", [
+            "beritas" => $beritas,
             "berita" => $berita,
             "beritaPopulers" => $beritaPopulers,
         ]);
