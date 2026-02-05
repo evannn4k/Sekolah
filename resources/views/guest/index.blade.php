@@ -2,107 +2,118 @@
 
 @push('style')
     <link rel="stylesheet" href="{{ asset('css/guest/berada.css') }}">
+    <style>
+        .banner {
+            max-height: 520px;
+        }
+
+        @media (max-width: 500) {
+            .banner {
+                max-height: 220px
+            }
+        }
+    </style>
 @endpush
 
 @section('main')
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content" data-aos="fade-right">
-                <div class="section-subtitle text-white mb-3">
-                    <i class="fas fa-star me-2"></i>PENDIDIKAN BERKUALITAS
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-8 offset-md-2 hero-content text-center" data-aos="fade-up">
+                    <div class="section-subtitle text-white mb-3">
+                        <i class="fas fa-star me-2"></i>PENDIDIKAN BERKUALITAS
+                    </div>
+                    <h1 class="hero-title">
+                        Membentuk Generasi <span
+                            style="background: linear-gradient(135deg, var(--accent-color), #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Qur'ani</span>
+                        yang Cerdas
+                    </h1>
+                    <p class="hero-subtitle">
+                        MI Muhammadiyah Gempolsewu berkomitmen memberikan pendidikan Islam terbaik dengan memadukan
+                        kurikulum nasional dan nilai-nilai Islami untuk membentuk karakter siswa yang berakhlak mulia.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap justify-content-center">
+                        <a href="{{ route('kontak') }}" class="btn btn-modern btn-primary-modern">
+                            Daftar Sekarang
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="{{ route('profil') }}" class="btn btn-modern btn-outline-modern">
+                            Tentang Kami
+                        </a>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    Membentuk Generasi <span
-                        style="background: linear-gradient(135deg, var(--accent-color), #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Qur'ani</span>
-                    yang Cerdas
-                </h1>
-                <p class="hero-subtitle">
-                    MI Muhammadiyah Gempolsewu berkomitmen memberikan pendidikan Islam terbaik dengan memadukan
-                    kurikulum nasional dan nilai-nilai Islami untuk membentuk karakter siswa yang berakhlak mulia.
-                </p>
-                <div class="d-flex gap-3 flex-wrap">
-                    <a href="{{ route("kontak") }}" class="btn btn-modern btn-primary-modern">
-                        Daftar Sekarang
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="{{ route("profil") }}" class="btn btn-modern btn-outline-modern">
-                        Tentang Kami
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
-                        alt="Students" class="img-fluid">
+                {{-- <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
+                            alt="Students" class="img-fluid">
 
-                    <!-- Floating Card 1 -->
-                    <div class="floating-card floating-card-1">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon" style="width: 50px; height: 50px; font-size: 20px;">
-                                <i class="fas fa-trophy"></i>
+                        <!-- Floating Card 1 -->
+                        <div class="floating-card floating-card-1">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="stat-icon" style="width: 50px; height: 50px; font-size: 20px;">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">50+</div>
+                                    <div class="text-muted small">Prestasi</div>
+                                </div>
                             </div>
-                            <div>
-                                <div class="fw-bold">50+</div>
-                                <div class="text-muted small">Prestasi</div>
+                        </div>
+
+                        <!-- Floating Card 2 -->
+                        <div class="floating-card floating-card-2" style="animation-delay: 1s;">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="stat-icon" style="width: 50px; height: 50px; font-size: 20px;">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">450+</div>
+                                    <div class="text-muted small">Siswa Aktif</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Floating Card 2 -->
-                    <div class="floating-card floating-card-2" style="animation-delay: 1s;">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon" style="width: 50px; height: 50px; font-size: 20px;">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div>
-                                <div class="fw-bold">450+</div>
-                                <div class="text-muted small">Siswa Aktif</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
-                {{-- <div id="carouselExampleCaptions" class="carousel slide">
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleCaptions" class="carousel slide">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
                             aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-inner">
-                        
-                        @foreach ($banners as $banner)
-                        
-                        <div class="carousel-item active">
-                            <img src="{{ asset("storage/images/banner/$banner->gambar") }}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ $banner->judul }}</h5>
-                                <p>{{ $banner->deskripsi }}</p>
-                            </div>
-                        </div>
+                    <div class="carousel-inner overflow-hidden rounded-5">
 
+                        @foreach ($banners as $banner)
+                            <div class="carousel-item active banner" data-bs-interval="10000">
+                                <img src="{{ asset("storage/images/banner/$banner->gambar") }}"
+                                    class="d-block w-100 img-fluid" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>{{ $banner->judul }}</h5>
+                                    <p>{{ $banner->deskripsi }}</p>
+                                </div>
+                            </div>
                         @endforeach
-                        
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
-                </div> --}}
-            </div>
-        </div>
-    </section>
+                </div>
 
+            </div>
+    </section>
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
@@ -121,7 +132,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <div class="stat-number">{{ $totalGuru ?? "" }}+</div>
+                        <div class="stat-number">{{ $totalGuru ?? '' }}+</div>
                         <div class="stat-label">Guru Profesional</div>
                     </div>
                 </div>
@@ -130,7 +141,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
-                        <div class="stat-number">{{ $totalPrestasi ?? "tes" }}+</div>
+                        <div class="stat-number">{{ $totalPrestasi ?? 'tes' }}+</div>
                         <div class="stat-label">Prestasi</div>
                     </div>
                 </div>
@@ -139,7 +150,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-award"></i>
                         </div>
-                        <div class="stat-number">{{ $profil->akreditasi ?? "" }}</div>
+                        <div class="stat-number">{{ $profil->akreditasi ?? '' }}</div>
                         <div class="stat-label">Akreditasi</div>
                     </div>
                 </div>

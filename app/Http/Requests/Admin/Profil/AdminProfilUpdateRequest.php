@@ -26,7 +26,7 @@ class AdminProfilUpdateRequest extends FormRequest
             "nama_sekolah" => "",
             "alamat" => "",
             "telepon" => "",
-            "email" => "email",
+            "email" => "nullable|email",
             "npsn" => "",
             "akreditasi" => "",
             "sejarah" => "",

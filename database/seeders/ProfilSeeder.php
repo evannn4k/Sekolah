@@ -27,6 +27,8 @@ class ProfilSeeder extends Seeder
             'foto_kepsek' => '',
             'judul_tentang_sekolah' => '',
             'tentang_sekolah' => '',
+            'logo' => '',
+            'jam_kerja' => '',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

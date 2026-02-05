@@ -24,7 +24,7 @@
                 <h2 class="section-title">KEPALA SEKOLAH {{ $profil->nama_sekolah }}</h2>
             </div>
             <hr>
-            <div class="row">
+            <div class="row g-5">
                 <div class="col-md-7" data-aos="fade-right">
                     <div class="py-4 lh-lg">
                         {!! nl2br($profil->sambutan_kepsek) !!}

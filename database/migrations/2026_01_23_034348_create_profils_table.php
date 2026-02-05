@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string("foto_kepsek");
             $table->string("judul_tentang_sekolah");
             $table->text("tentang_sekolah");
+            $table->string("logo");
+            $table->string("jam_kerja");
             $table->timestamps();
         });
     }

@@ -76,7 +76,7 @@
                                     <span><i class="far fa-eye me-1"></i> {{ $berita->views ?? 0 }}</span>
                                 </div>
                                 <h5 class="fw-bold mb-3">
-                                    <a href="{{ route('detail-berita', $berita) }}"
+                                    <a href="{{ route('detail-berita', $berita->slug) }}"
                                         class="text-decoration-none text-dark">{{ $berita->judul }}</a>
                                 </h5>
                                 <p class="text-muted mb-3">{{ Str::limit($berita->konten, 150) }}</p>

@@ -25,7 +25,7 @@ class GuestController extends Controller
         $totalGuru = GuruStaff::count();
         $beritas = Berita::latest()->take(3)->get();
         $galeris = Galeri::latest()->take(3)->get();
-        $banners = Banner::where("status", "aktif")->orderBy("urutan")->get();
+        $banners = Banner::where("status", "aktif")->orderBy("urutan")->limit(3)->get();
 
         return view("guest.index", [
             "profil" => $profil,
